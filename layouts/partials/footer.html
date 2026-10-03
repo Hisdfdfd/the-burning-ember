@@ -1,0 +1,5 @@
+<footer class="site-footer">
+<nav class="bottom-nav" aria-label="Sections">
+{{ range .Site.Menus.main }}{{ if ne .Name "Home" }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}{{ end }}
+</nav>
+</footer>
