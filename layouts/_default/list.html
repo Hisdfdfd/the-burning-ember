@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="section-intro">
+<p class="item-type">{{ .Title }}</p>
+<h1>{{ .Title }}</h1>
+{{ with .Content }}<div class="intro-copy">{{ . }}</div>{{ end }}
+</section>
+{{ if .Pages }}
+{{ range .Pages.ByDate.Reverse }}
+<article class="archive-item">
+<h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+{{ with .Params.description }}<p class="item-summary">{{ . }}</p>{{ end }}
+<div class="archive-meta">{{ .Date.Format "January 2, 2006" }}</div>
+</article>
+{{ end }}
+{{ else }}<div class="empty-state">Nothing here yet. This space will grow as I add things.</div>{{ end }}
+{{ end }}
