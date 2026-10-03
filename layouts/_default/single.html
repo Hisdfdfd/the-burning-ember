@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="single">
+<p class="item-type">{{ .Section }}</p>
+<h1>{{ .Title }}</h1>
+{{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}
+{{ if .Params.youtube }}<div class="video-frame"><iframe src="https://www.youtube.com/embed/{{ .Params.youtube }}" title="{{ .Title }}" loading="lazy" allowfullscreen></iframe></div>{{ end }}
+<div class="single-content">{{ .Content }}</div>
+{{ with .Params.source }}<p class="source-link"><a href="{{ . }}" target="_blank" rel="noopener">View source →</a></p>{{ end }}
+</article>
+{{ end }}
